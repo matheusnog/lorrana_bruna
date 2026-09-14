@@ -2,6 +2,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { ArrowUpRight, Instagram, Menu, Play, Youtube } from 'lucide-react'
 import './styles.css'
+import lorranaImage from './img/lorrana.png'
 
 const videoUrl = 'https://www.youtube.com/watch?v=h2NzGPgUZek'
 const instagramUrl = 'https://www.instagram.com/lorranabrunasilva/'
@@ -28,7 +29,7 @@ function App() {
       </nav>
 
       <section className="hero" id="inicio">
-        <div className="hero-image" style={{ backgroundImage: `url(${videoThumbnail})` }} />
+        <div className="hero-image" style={{ backgroundImage: `url(${lorranaImage})` }} />
         <div className="hero-wash" />
         <div className="hero-content shell">
           <p className="eyebrow light">Cantora gospel · Brasil</p>
@@ -37,13 +38,12 @@ function App() {
           <a className="button button-light" href="#musica">Ouça agora <Play size={16} fill="currentColor" /></a>
         </div>
         <div className="hero-bottom shell">
-          <span>01 / 03</span>
           <span className="scroll-note"><span className="scroll-line" />Role para descobrir</span>
         </div>
       </section>
 
       <section className="intro shell" id="sobre">
-        <div className="section-kicker"><span>01</span><span className="rule" /><span>Sobre Lorrana</span></div>
+        <div className="section-kicker"><span className="rule" /><span>Sobre Lorrana</span></div>
         <div className="intro-grid">
           <h2>Fé cantada<br /><span>com verdade.</span></h2>
           <div className="intro-text">
@@ -56,7 +56,7 @@ function App() {
 
       <section className="release" id="musica">
         <div className="shell">
-          <div className="section-kicker light"><span>02</span><span className="rule" /><span>Lançamento</span></div>
+          <div className="section-kicker light"><span className="rule" /><span>Lançamento</span></div>
           <div className="release-grid">
             <div>
               <p className="eyebrow light">Disponível no YouTube</p>
@@ -74,14 +74,13 @@ function App() {
       </section>
 
       <section className="presence shell" id="agenda">
-        <div className="section-kicker"><span>03</span><span className="rule" /><span>Presença & agenda</span></div>
+        <div className="section-kicker"><span className="rule" /><span>Presença & agenda</span></div>
         <div className="presence-grid">
           <div>
             <h2>O próximo<br /><span>encontro é seu.</span></h2>
             <p>Convites para cultos, congressos, conferências e momentos especiais de adoração.</p>
           </div>
           <div className="booking-box" id="contato">
-            <span className="booking-number">01</span>
             <div>
               <h3>Leve Lorrana<br />para sua igreja</h3>
               <a className="text-link" href={instagramUrl} target="_blank" rel="noreferrer">Solicitar informações <ArrowUpRight size={17} /></a>
