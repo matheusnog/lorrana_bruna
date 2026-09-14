@@ -1,6 +1,6 @@
-import { StrictMode } from 'react'
+import { StrictMode, useState } from 'react'
 import { createRoot } from 'react-dom/client'
-import { ArrowUpRight, Instagram, Menu, Play, Youtube } from 'lucide-react'
+import { ArrowUpRight, Instagram, Menu, Play, X, Youtube } from 'lucide-react'
 import './styles.css'
 import lorranaImage from './img/lorrana.png'
 
@@ -11,6 +11,10 @@ const facebookUrl = 'https://www.facebook.com/lorranabruna.silvasouza.5?locale=p
 const videoThumbnail = 'https://i.ytimg.com/vi/h2NzGPgUZek/maxresdefault.jpg'
 
 function App() {
+  const [menuOpen, setMenuOpen] = useState(false)
+
+  const closeMenu = () => setMenuOpen(false)
+
   return (
     <main>
       <nav className="nav shell" aria-label="Navegação principal">
@@ -18,14 +22,16 @@ function App() {
           <span className="brand-mark">LB</span>
           <span>Lorrana<br /><em>Bruna</em></span>
         </a>
-        <div className="nav-links">
-          <a href="#sobre">Sobre</a>
-          <a href="#musica">Música</a>
-          <a href="#agenda">Agenda</a>
-          <a href={instagramUrl} target="_blank" rel="noreferrer">Instagram <ArrowUpRight size={14} /></a>
+        <div className={`nav-links${menuOpen ? ' is-open' : ''}`} id="menu-links">
+          <a href="#sobre" onClick={closeMenu}>Sobre</a>
+          <a href="#musica" onClick={closeMenu}>Música</a>
+          <a href="#agenda" onClick={closeMenu}>Agenda</a>
+          <a href={instagramUrl} target="_blank" rel="noreferrer" onClick={closeMenu}>Instagram <ArrowUpRight size={14} /></a>
         </div>
-        <a className="nav-cta" href="#contato">Fale com a equipe <ArrowUpRight size={16} /></a>
-        <button className="menu-button" type="button" aria-label="Abrir menu"><Menu size={22} /></button>
+        <a className="nav-cta" href="#contato" onClick={closeMenu}>Fale com a equipe <ArrowUpRight size={16} /></a>
+        <button className="menu-button" type="button" aria-label={menuOpen ? 'Fechar menu' : 'Abrir menu'} aria-expanded={menuOpen} aria-controls="menu-links" onClick={() => setMenuOpen((open) => !open)}>
+          {menuOpen ? <X size={22} /> : <Menu size={22} />}
+        </button>
       </nav>
 
       <section className="hero" id="inicio">
