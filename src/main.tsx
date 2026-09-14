@@ -5,6 +5,8 @@ import './styles.css'
 
 const videoUrl = 'https://www.youtube.com/watch?v=h2NzGPgUZek'
 const instagramUrl = 'https://www.instagram.com/lorranabrunasilva/'
+const whatsappUrl = 'https://wa.me/5512988329884'
+const facebookUrl = 'https://www.facebook.com/lorranabruna.silvasouza.5?locale=pt_BR'
 const videoThumbnail = 'https://i.ytimg.com/vi/h2NzGPgUZek/maxresdefault.jpg'
 
 function App() {
@@ -83,6 +85,10 @@ function App() {
             <div>
               <h3>Leve Lorrana<br />para sua igreja</h3>
               <a className="text-link" href={instagramUrl} target="_blank" rel="noreferrer">Solicitar informações <ArrowUpRight size={17} /></a>
+              <div className="contact-links">
+                <a href={whatsappUrl} target="_blank" rel="noreferrer">WhatsApp <ArrowUpRight size={15} /></a>
+                <a href={facebookUrl} target="_blank" rel="noreferrer">Facebook <ArrowUpRight size={15} /></a>
+              </div>
             </div>
           </div>
         </div>
